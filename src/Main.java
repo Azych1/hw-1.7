@@ -16,7 +16,7 @@ public class Main {
         int salary = 15000;
         int total = 0;
         int month = 0;
-        while (total <= 2459000) {
+        while (total <= 2_459_000) {
             total = total + salary;
             month++;
             System.out.println("Месяц "+month+", сумма накоплений равна "+total+" рублей");
@@ -45,6 +45,8 @@ public class Main {
         int mortality = population / 1000 * 8;
         for (int year = 1; year <= 10; year++) {
             population = population + birthRate - mortality;
+            birthRate = population / 1000 * 17;
+            mortality = population / 1000 * 8;
             System.out.println("Год "+year+", численность населения составляет "+population);
         }
 
@@ -54,8 +56,7 @@ public class Main {
         System.out.println("Задача 4");
         int salary = 15000;
         int total = 0;
-        int month = 0;
-        for (;total <= 12000000;month++) {
+        for (int month = 0;total <= 12_000_000;month++) {
             total = total + total/100*7;
             total = total + salary;
             System.out.println("Месяц "+month+", сумма накоплений "+total);
@@ -66,16 +67,15 @@ public class Main {
         System.out.println("Задача 5");
         int total = 15000;
         int month = 0;
-        do {
+        while(total<12000000){
             total = total + total/100*7;
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц "+month+" Итого "+total);
-            } else if (total>=12000000) {
+            } else if (total>=12_000_000) {
                 System.out.println("Планируемая сумма накоплена на "+month+" месяц. Итого "+total);
             }
         }
-        while (total<12000000);
     }
 
     public static void task6 () {
@@ -97,18 +97,9 @@ public class Main {
 
     public static void task7 () {
         System.out.println("Задача 7");
-        int date = 0;
-        int dayOfWeek = 0;
-      while (date<=31) {
-          date++;
-          dayOfWeek++;
-          if (dayOfWeek == 5) {
-              System.out.println("Сегодня пятница, " + date + "-е число. Необходимо подготовить отчет");
-          }
-          if (dayOfWeek == 7) {
-              dayOfWeek = 0;
-          }
-      }
+        for (int date = 5; date <= 31; date += 7) {
+                System.out.println("Сегодня пятница, " + date + "-е число. Необходимо подготовить отчет");
+        }
 
 
     }
